@@ -14,13 +14,20 @@
  *    limitations under the License.
  */
 
-package www.game.tictaktoe;
+package www.game.tictaktoe.component;
+
+import www.game.tictaktoe.model.GameTable;
 
 /**
  * @author Odilov_Zafarjon
- * @link https://t.me/zafarzhon_odilov
+ * @link <a href="https://t.me/zafarzhon_odilov">...</a>
  */
-public class UserMove {
-    public void make(final GameTable gameTable) {
+public class WinnerVerify {
+    public boolean isUserWin(final GameTable gameTable) {
+        return false;
+    }
+
+    public boolean isComputerWin(final GameTable gameTable) {
+        return false;
     }
 }

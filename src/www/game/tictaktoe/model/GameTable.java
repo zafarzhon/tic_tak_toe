@@ -14,13 +14,11 @@
  *    limitations under the License.
  */
 
-package www.game.tictaktoe;
+package www.game.tictaktoe.model;
 
 /**
  * @author Odilov_Zafarjon
  * @link https://t.me/zafarzhon_odilov
  */
-public class ComputerMove {
-    public void make(final GameTable gameTable) {
-    }
+public class GameTable {
 }

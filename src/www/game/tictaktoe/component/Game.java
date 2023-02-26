@@ -14,13 +14,15 @@
  *    limitations under the License.
  */
 
-package www.game.tictaktoe;
+package www.game.tictaktoe.component;
+
+import www.game.tictaktoe.model.GameTable;
 
 import java.util.Random;
 
 /**
  * @author Odilov_Zafarjon
- * @link https://t.me/zafarzhon_odilov
+ * @link <a href="https://t.me/zafarzhon_odilov">...</a>
  */
 public class Game {
 
