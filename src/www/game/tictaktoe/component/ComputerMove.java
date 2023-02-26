@@ -16,7 +16,10 @@
 
 package www.game.tictaktoe.component;
 
+import www.game.tictaktoe.model.Cell;
 import www.game.tictaktoe.model.GameTable;
+
+import java.util.Random;
 
 /**
  * @author Odilov_Zafarjon
@@ -24,5 +27,13 @@ import www.game.tictaktoe.model.GameTable;
  */
 public class ComputerMove {
     public void make(final GameTable gameTable) {
+        int row, col;
+        Cell cell;
+        do {
+            row = new Random().nextInt(3);
+            col = new Random().nextInt(3);
+            cell = new Cell(row, col);
+        } while (!gameTable.isEmpty(cell));
+        gameTable.setSign(cell, 'o');
     }
 }
