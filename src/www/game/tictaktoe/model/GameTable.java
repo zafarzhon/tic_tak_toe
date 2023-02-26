@@ -16,6 +16,8 @@
 
 package www.game.tictaktoe.model;
 
+import java.util.Arrays;
+
 /**
  * @author Odilov_Zafarjon
  * @link <a href="https://t.me/zafarzhon_odilov">...</a>
@@ -37,5 +39,18 @@ public class GameTable {
 
     public void setSign(final Cell cell, char sign) {
         table[cell.getRow()][cell.getCol()] = sign;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("GameTable{");
+        sb.append("table=");
+        for (int i = 0; i < table.length; i++) {
+            sb.append(Arrays.toString(table));
+            if (i < table.length - 1)
+                sb.append(";");
+        }
+        sb.append('}');
+        return sb.toString();
     }
 }
