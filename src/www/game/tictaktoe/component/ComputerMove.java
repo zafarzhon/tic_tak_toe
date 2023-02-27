@@ -34,6 +34,6 @@ public class ComputerMove {
             col = new Random().nextInt(3);
             cell = new Cell(row, col);
         } while (!gameTable.isEmpty(cell));
-        gameTable.setSign(cell, 'o');
+        gameTable.setSign(cell, 'O');
     }
 }
