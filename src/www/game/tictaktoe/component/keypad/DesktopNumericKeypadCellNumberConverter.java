@@ -14,16 +14,34 @@
  *    limitations under the License.
  */
 
-package www.game.tictaktoe.component;
+package www.game.tictaktoe.component.keypad;
 
+import www.game.tictaktoe.component.CellNumberConverter;
 import www.game.tictaktoe.model.Cell;
 
 /**
  * @author Odilov_Zafarjon
  * @link <a href="https://t.me/zafarzhon_odilov">...</a>
  */
-public interface CellNumberConverter {
-    Cell toCell(char number);
+public class DesktopNumericKeypadCellNumberConverter implements CellNumberConverter {
+    private static final char[][] mapping = {
+            {'7', '8', '9'},
+            {'4', '5', '6'},
+            {'1', '2', '3'}
+    };
 
-    char toNumber(Cell cell);
+    public Cell toCell(final char number) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (mapping[i][j] == number) {
+                    return new Cell(i, j);
+                }
+            }
+        }
+        return null;
+    }
+
+    public char toNumber(final Cell cell) {
+        return mapping[cell.getRow()][cell.getCol()];
+    }
 }
