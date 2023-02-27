@@ -8,9 +8,10 @@ import www.game.tictaktoe.component.*;
  */
 public final class Launcher {
     public static void main(final String[] args) {
-        Game game = new Game(new DataPrinter(),
+        final CellNumberConverter cellNumberConverter = new CellNumberConverter();
+        Game game = new Game(new DataPrinter(cellNumberConverter),
                 new ComputerMove(),
-                new UserMove(),
+                new UserMove(cellNumberConverter),
                 new WinnerVerify(),
                 new CellVerifier()
         );

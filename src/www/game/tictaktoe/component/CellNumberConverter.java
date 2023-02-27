@@ -17,38 +17,30 @@
 package www.game.tictaktoe.component;
 
 import www.game.tictaktoe.model.Cell;
-import www.game.tictaktoe.model.GameTable;
 
 /**
  * @author Odilov_Zafarjon
  * @link <a href="https://t.me/zafarzhon_odilov">...</a>
  */
-public class DataPrinter {
-    private final CellNumberConverter cellNumberConverter;
+public class CellNumberConverter {
+    private static final char[][] mapping = {
+            {'7', '8', '9'},
+            {'4', '5', '6'},
+            {'1', '2', '3'}
+    };
 
-    public DataPrinter(final CellNumberConverter cellNumberConverter) {
-        this.cellNumberConverter = cellNumberConverter;
+    public Cell toCell(final char number) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (mapping[i][j] == number) {
+                    return new Cell(i, j);
+                }
+            }
+        }
+        return null;
     }
 
-    public void printMappingTable() {
-        for (int i = 0; i < 3; i++) {
-            System.out.println("-------------");
-            for (int j = 0; j < 3; j++) {
-                System.out.print("| " + cellNumberConverter.toNumber(new Cell(i, j)) + " ");
-            }
-            System.out.println("|");
-        }
-        System.out.println("-------------");
-    }
-
-    public void printGameTable(final GameTable gameTable) {
-        for (int i = 0; i < 3; i++) {
-            System.out.println("-------------");
-            for (int j = 0; j < 3; j++) {
-                System.out.print("| " + gameTable.getSign(new Cell(i, j)) + " ");
-            }
-            System.out.println("|");
-        }
-        System.out.println("-------------");
+    public char toNumber(final Cell cell) {
+        return mapping[cell.getRow()][cell.getCol()];
     }
 }
