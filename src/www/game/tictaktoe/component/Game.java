@@ -69,6 +69,10 @@ public class Game {
                 System.out.println("COMPUTER WIN");
                 break;
             }
+            if (drawVerify.isDraw(gameTable)) {
+                System.out.println("Sorry, DRAW");
+                break;
+            }
         }
 
         System.out.println("GAME OVER!");
