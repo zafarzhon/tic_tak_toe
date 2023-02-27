@@ -23,8 +23,8 @@ import www.game.tictaktoe.model.GameTable;
  * @author Odilov_Zafarjon
  * @link <a href="https://t.me/zafarzhon_odilov">...</a>
  */
-public class DrawVerify {
-    public boolean isDraw(final GameTable gameTable) {
+public class CellVerifier {
+    public boolean allCellFilled(final GameTable gameTable) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (gameTable.isEmpty(new Cell(i, j))) {
