@@ -24,24 +24,12 @@ import www.game.tictaktoe.model.Cell;
  * @link <a href="https://t.me/zafarzhon_odilov">...</a>
  */
 public class TerminalNumericKeypadCellNumberConverter implements CellNumberConverter {
-    private static final char[][] mapping = {
-            {'1', '2', '3'},
-            {'4', '5', '6'},
-            {'7', '8', '9'}
-    };
-
     public Cell toCell(final char number) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (mapping[i][j] == number) {
-                    return new Cell(i, j);
-                }
-            }
-        }
-        return null;
+        final int num = number - '0' - 1;
+        return new Cell(num / 3, num % 3);
     }
 
     public char toNumber(final Cell cell) {
-        return mapping[cell.getRow()][cell.getCol()];
+        return (char) (cell.getRow() * 3 + cell.getCol() + '0' + 1);
     }
 }
